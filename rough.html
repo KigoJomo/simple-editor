@@ -1,0 +1,26 @@
+<main class="h-full flex flex-col overflow-y-auto hide-scrollbar"><!--$--><!--/$-->
+  <section class="h-screen flex flex-col gap-6">
+    <a href="/">
+      <button data-slot="button"
+        class="inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 px-4 py-2 has-[&gt;svg]:px-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-move-left" aria-hidden="true">
+          <path d="M6 8L2 12L6 16"></path>
+          <path d="M2 12H22"></path>
+        </svg>
+        Back to Articles
+      </button>
+    </a>
+    <h2>Lorem Ipsum</h2><span class="max-w-4xl whitespace-pre-wrap">Dolor sit amet</span>
+    <div data-orientation="horizontal" role="none" data-slot="separator"
+      class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px">
+    </div>
+    <div> <!-- Where is this div coming from and how do I remove or customize it -->
+      <div contenteditable="true" role="textbox" translate="no" class="tiptap ProseMirror" tabindex="0">
+        <p>This is the content for this article</p>
+      </div>
+    </div>
+    <div class="editor-content"></div> <!-- Also, one would expect the content to fall within this div -->
+  </section>
+</main>
