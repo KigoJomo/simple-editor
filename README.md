@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Editor
 
-## Getting Started
+A shared rich-text editor experiment built with Tiptap and Convex ProseMirror Sync.
 
-First, run the development server:
+Users can create an article with a title and short overview, open its document, and edit the body. Convex stores the article record and synchronises ProseMirror steps between open editors.
+
+## What is implemented
+
+- article creation and listing
+- a Tiptap editor with headings, lists, blockquotes, code, links, and basic text formatting
+- live document sync through `@convex-dev/prosemirror-sync`
+- stable document IDs separate from Convex article IDs
+- loading, empty, and missing-article states
+
+There is no authentication or per-document access control. Anyone connected to the same deployment can list and edit every article, so this is a sync experiment, not a production editor.
+
+## Run it locally
+
+You need pnpm and a Convex deployment.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+pnpm exec convex dev
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Convex writes `NEXT_PUBLIC_CONVEX_URL` during setup.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm lint
+pnpm build
+```
